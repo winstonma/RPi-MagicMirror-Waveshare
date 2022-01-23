@@ -45,7 +45,6 @@ pm2 save
 
 ## Todo
 - [X] 3d print case
-- [ ] support more waveshare epaper display sizes
 - [ ] white background/black font mode (invert image with [jimp](https://github.com/oliver-moran/jimp) (image.invert();))
 
 ## Ressources
