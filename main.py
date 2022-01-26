@@ -52,5 +52,5 @@ except KeyboardInterrupt:
     logging.info("ctrl + c:")
     driver.close()
     driver.quit()
-    epd7in5_V2.epdconfig.module_exit()
+    epd.epdconfig.module_exit()
     exit()
