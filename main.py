@@ -20,7 +20,8 @@ try:
     refreshRate = config.getint('Display', 'refesh_rate')
     model = config.get('Display', 'model')
 
-    epd = epaper.epaper(model).EPD()
+    einkDevice = epaper.epaper(model)
+    epd = einkDevice.EPD()
     epd.init()
     epd.Clear()
 
@@ -39,9 +40,9 @@ try:
 
     while True:
         # Display the screenshot
-        sleep(refreshRate - time() % refreshRate)
         img = Image.open(BytesIO(driver.get_screenshot_as_png()))
         epd.display(epd.getbuffer(img))
+        sleep(refreshRate - time() % refreshRate)
 
     print('Success')
 
@@ -50,7 +51,10 @@ except IOError as e:
 
 except KeyboardInterrupt:
     logging.info("ctrl + c:")
-    driver.close()
+    epd.init()
+    epd.Clear()
+    einkDevice.epdconfig.module_exit()
+
     driver.quit()
-    epd.epdconfig.module_exit()
+
     exit()
