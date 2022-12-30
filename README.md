@@ -35,11 +35,11 @@ pm2 startup
 # Clone/copy the project files to your system
 git clone https://github.com/winstonma/RPi-MagicMirror-Waveshare.git
 # Move to the project folder
-cd rpi-magicmirror-eink
+cd RPi-MagicMirror-Waveshare
 # Install python dependencies (inside the `rpi-magicmirror-eink` folder)
 sudo pip install -r requirements.txt
 # Start the script with PM2 and run it in the background
-pm2 start index.js --name "eink-update"
+pm2 start main.py --name "eink-update"
 pm2 save
 ```
 
