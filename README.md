@@ -106,6 +106,13 @@ header {
 ```
 </details>
 
+## Troubleshooting
+### My screen flickers and then stays black
+Wait! I guess this has to do with the page loading. While the page hasn't loaded, a screenshot is taken which due to the initial CSS of MagicMirror² purely black. After some minutes the picture should reload and show what you want to see.
+### After reboot the MagicMirror doesn't show
+Does ``pm2 list`` takes some seconds to load and shows an empty table? Has happened to me too! Carefully [go through the installation of the autostart](https://docs.magicmirror.builders/configuration/autostart.html#using-pm2) again! **Pay close attention to the shell output! At some point it gives you a command line you have to copy, paste, execute.** Do so and probably the problem is solved. Don't forget to ``pm2 save``!
+### I cannot see my CSS-Changes
+Go to mobile view in your "normal" Browser such as Firefox (Ctrl+Shift+M) and configure a custom screen (for instance 800x480 for the large Waveshare display), do all your CSS stuff, reload the browser window each time you want to check the changes. When you are satisfied on your "normal" screen simulating your e-paper display ``sudo reboot`` your Rasperry Pi to take effect of the changes on the EPD (electornic paper display)!
 
 ## Ressources
 - The project uses the Original Library written by Waveshare. It can be downloaded [here](https://www.waveshare.com/wiki/Main_Page#OLEDs_.2F_LCDs).
