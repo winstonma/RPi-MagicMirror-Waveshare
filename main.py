@@ -17,7 +17,7 @@ try:
     # Read config file
     config = ConfigParser()
     config.read('config.cfg')
-    refreshRate = config.getint('Display', 'refesh_rate')
+    refreshRate = config.getint('Display', 'refresh_rate')
     model = config.get('Display', 'model')
 
     einkDevice = epaper.epaper(model)
